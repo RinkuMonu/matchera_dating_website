@@ -41,10 +41,10 @@ const Header = () => {
 
         {/* CENTER */}
         <Link
-          to="/onboarding"
+          to="#"
           className="navbar-brand bg-primarys py-2 px-4 mx-3 d-none d-lg-block"
         >
-          <h1 className="text-white">Select Your Matches</h1>
+          <h1 className="text-white">Company Name</h1>
         </Link>
 
         {/* RIGHT */}
@@ -54,7 +54,7 @@ const Header = () => {
           {!isLoggedIn ? (
             <>
               <Link to="/signin" className="nav-item nav-link">Sign In</Link>
-              <Link to="/signup" className="nav-item nav-link">Sign Up</Link>
+              <Link to="/signup" className="nav-item nav-link">Select Your Matches</Link>
             </>
           ) : (
             <>

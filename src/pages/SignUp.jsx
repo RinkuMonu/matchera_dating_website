@@ -70,19 +70,19 @@ const SignUp = () => {
         return Object.keys(newErrors).length === 0;
     };
 
-const handleSubmit = (e) => {
-    e.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-    if (validate()) {
-        console.log("Signup Data:", formData);
+        if (validate()) {
+            console.log("Signup Data:", formData);
 
-        // 🔐 user login simulate (optional)
-        localStorage.setItem("isLoggedIn", "true");
+            // 🔐 user login simulate (optional)
+            localStorage.setItem("isLoggedIn", "true");
 
-        // 👉 dashboard redirect
-        navigate("/dashboard");
-    }
-};
+            // 👉 dashboard redirect
+            navigate("/dashboard");
+        }
+    };
 
 
     return (
@@ -213,11 +213,11 @@ const handleSubmit = (e) => {
                                             </div>
                                         </div>
 
-                                      <div className="col-12">
-    <button type="submit" className="btn btn-primarys w-100 py-3">
-        Create Account
-    </button>
-</div>
+                                        <div className="col-12">
+                                            <Link to={"/onboarding"} type="submit" className="btn btn-primarys w-100 py-3">
+                                                Next Step
+                                            </Link>
+                                        </div>
 
                                     </div>
 

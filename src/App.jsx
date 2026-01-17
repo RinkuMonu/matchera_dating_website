@@ -33,6 +33,8 @@
 // }
 
 // export default App
+import ScrollToTop from "./components/ScrollToTop";
+
 
 import './App.css';
 import './assets/css/style.css';
@@ -57,6 +59,7 @@ import About from './pages/About';
 import StepperForm from './components/StepperForm';
 import Dashboard from './pages/Dashboard';
 import MatchProfile from './pages/MatchProfile';
+import Profile from "./pages/Profile";
 
 function App() {
 
@@ -82,6 +85,7 @@ useEffect(() => {
   }, []);
   return (
     <BrowserRouter>
+      <ScrollToTop /> 
       <Routes>
 
         {/* 🌍 PUBLIC ROUTES */}
@@ -95,6 +99,8 @@ useEffect(() => {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/cancellation-policy" element={<Cancellation />} />
           <Route path="/onboarding" element={<StepperForm />} />
+          <Route path="/profile" element={<Profile />} />
+
 
         </Route>
 

@@ -1,58 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import profile1 from "../assets/img/service-1.jpg";
-import profile2 from "../assets/img/service-2.jpg";
-import profile3 from "../assets/img/service-3.jpg";
 
-const matchesData = [
-  {
-    id: "1",
-    name: "Aarohi",
-    age: 25,
-    img: profile1,
-    location: "Delhi, India",
-    matchPercent: "82%",
-    shortDesc: "Creative soul who loves photography & travel.",
-    longDesc:
-      "I believe in deep conversations, spontaneous trips, and capturing little moments of life. Looking for someone genuine who values trust, laughter, and growth together.",
-    height: "5'5\"",
-    profession: "Graphic Designer",
-    interests: ["Traveling", "Photography", "Music", "Cafe Hopping"],
-    lookingFor: "Serious Relationship"
-  },
-  {
-    id: "2",
-    name: "Rohan",
-    age: 28,
-    img: profile2,
-    location: "Mumbai, India",
-    matchPercent: "76%",
-    shortDesc: "Fitness freak with a love for movies.",
-    longDesc:
-      "Gym in the morning, movies at night. I enjoy staying active and also relaxing with good food and meaningful conversations.",
-    height: "5'9\"",
-    profession: "Software Engineer",
-    interests: ["Fitness", "Movies", "Cooking"],
-    lookingFor: "Long-term Dating"
-  },
-  {
-    id: "3",
-    name: "Simran",
-    age: 24,
-    img: profile3,
-    location: "Bangalore, India",
-    matchPercent: "88%",
-    shortDesc: "Techie by day, artist by heart.",
-    longDesc:
-      "I love painting, music, and exploring new cafes. Looking for someone kind, ambitious, and emotionally mature.",
-    height: "5'4\"",
-    profession: "UI/UX Designer",
-    interests: ["Art", "Music", "Sketching"],
-    lookingFor: "Meaningful Connection"
-  }
-];
+import { matchesData } from "../data/matchesData";
+
 
 const MatchProfile = () => {
+  
   const { id } = useParams();
   const match = matchesData.find(m => m.id === id);
 

@@ -8,14 +8,14 @@ import product5 from "../assets/img/hero-1.jpg";
 import product6 from "../assets/img/hero-2.jpg";
 
 const Products = () => {
-    const products = [
-        { id: 1, img: product1, title: "Wedding Photography", price: "$299" },
-        { id: 2, img: product2, title: "Portrait Shoot", price: "$199" },
-        { id: 3, img: product3, title: "Video Editing", price: "$149" },
-        { id: 4, img: product4, title: "Photo Retouching", price: "$99" },
-        { id: 5, img: product5, title: "Event Coverage", price: "$399" },
-        { id: 6, img: product6, title: "Studio Shoot", price: "$249" },
-    ];
+const products = [
+  { id: 1, img: product1, title: "Aarohi Sharma", price: "₹299" },   
+  { id: 2, img: product2, title: "Rohan Mehta", price: "₹199" },    
+  { id: 3, img: product3, title: "Simran Kaur", price: "₹149" },    
+  { id: 4, img: product4, title: "Arjun Verma", price: "₹99" },     
+  { id: 5, img: product5, title: "Neha Singh", price: "₹399" },     
+  { id: 6, img: product6, title: "Karan Malhotra", price: "₹249" }, 
+];
 
     return (
         <>

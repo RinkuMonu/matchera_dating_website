@@ -17,7 +17,7 @@ const MatchesGrid = ({ matches }) => {
             onClick={() => navigate(`/match/${m.id}`)}
           >
             <img
-              src={m.photo}
+              src={m.img}
               alt={m.name}
               className="img-fluid w-100"
               style={{ height: "260px", objectFit: "cover" }}

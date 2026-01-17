@@ -5,34 +5,52 @@ import MatchesGrid from "../components/MatchesGrid";
 import HeaderDashboard from "../components/DashboardHeader";
 import selfimg from "../assets/img/project-2.jpg";
 import banner from "../assets/img/banner.jpg";
+import { matchesData } from "../data/matchesData";
 
-const dummyMatches = [
-  { id: 1, name: "Alice", age: 25, location: "New York", photo: "https://i.pravatar.cc/400?img=1", desc: "Loves photography and travel." },
-  { id: 2, name: "Bob", age: 28, location: "Los Angeles", photo: "https://i.pravatar.cc/400?img=2", desc: "Music and movies lover." },
-  { id: 3, name: "Carol", age: 23, location: "Chicago", photo: "https://i.pravatar.cc/400?img=3", desc: "Fitness & food enthusiast." },
-  { id: 4, name: "David", age: 30, location: "Miami", photo: "https://i.pravatar.cc/400?img=4", desc: "Adventure seeker." }
-];
+
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
-  const [matches, setMatches] = useState(dummyMatches);
+  // const [matches, setMatches] = useState([]);
   const [filters, setFilters] = useState({ location: "", minAge: "", maxAge: "" });
+const [matches, setMatches] = useState(matchesData);
 
+  // Load user profile
   useEffect(() => {
     const profile = JSON.parse(localStorage.getItem("userProfile"));
     if (!profile) navigate("/");
     else setUser(profile);
   }, [navigate]);
 
+  // Opposite gender matching
+useEffect(() => {
+  if (user?.gender) {
+    const opposite =
+      user.gender === "Male" ? "Female" :
+      user.gender === "Female" ? "Male" : null;
+
+    if (opposite) {
+      setMatches(matchesData.filter(m => m.gender === opposite));
+    } else {
+      setMatches(matchesData);
+    }
+  }
+}, [user]);
+
+
+  // Apply filters
   const applyFilters = () => {
-    let data = dummyMatches;
+    let data = [...matches];
+
     if (filters.location)
       data = data.filter(m =>
         m.location.toLowerCase().includes(filters.location.toLowerCase())
       );
+
     if (filters.minAge) data = data.filter(m => m.age >= filters.minAge);
     if (filters.maxAge) data = data.filter(m => m.age <= filters.maxAge);
+
     setMatches(data);
   };
 
