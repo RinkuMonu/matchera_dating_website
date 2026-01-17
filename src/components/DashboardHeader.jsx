@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const HeaderDashboard = ({ user }) => {
+  if (!user) return null; // 🔥 important safety check
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-3">
       <Link className="navbar-brand text-primarys fw-bold" to="/">

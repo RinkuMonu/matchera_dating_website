@@ -5,6 +5,9 @@
     --light: #FDF5EB;
     --dark: #1E1916;
 }
+body{
+    overflow-x:hidden;
+}
 .btn-primarys {
     background-color: #EAA636 !important;
     border-color: #EAA636 !important;
